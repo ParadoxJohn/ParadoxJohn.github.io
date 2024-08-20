@@ -93,11 +93,11 @@ $(document).ready(function() {
                 if ($errorMessage.length === 0) {
                     $this.after('<div class="error-message">This field is required.</div>');
                 }
-                $this.css('border-color', 'red'); // Встановлення червоного бордера
+                $this.css('border-color', 'red'); 
             } else {
                 $this.removeClass('is-invalid');
                 $this.next('.error-message').remove();
-                $this.css('border-color', ''); // Встановлення стандартного бордера
+                $this.css('border-color', ''); 
             }
         });
 
@@ -107,15 +107,14 @@ $(document).ready(function() {
         }
     });
 
-    // Handle input field change to remove error styles when filled
     $('#contactForm input').on('input', function() {
         const $this = $(this);
         const value = $this.val().trim();
         
         if (value === '') {
-            $this.css('border-color', 'red'); // Червоний бордер для порожніх полів
+            $this.css('border-color', 'red'); 
         } else {
-            $this.css('border-color', ''); // Стандартний бордер для заповнених полів
+            $this.css('border-color', '');
             $this.next('.error-message').remove();
             $this.removeClass('is-invalid');
         }
@@ -134,7 +133,6 @@ $(document).ready(function() {
         const html = $(this).html();
         selectedOption.html(html);
         customSelect.removeClass('open');
-        // Update the hidden input or use the value as needed
     });
 
     $(document).on('click', function(e) {
